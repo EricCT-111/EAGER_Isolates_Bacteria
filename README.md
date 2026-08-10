@@ -11,7 +11,6 @@ The purpose for this pipeline is to identify amr, virulence, stress, mobilizable
     * Confirm it worked with `grep -h 'PIPELINE_DIR=' /your/path/scripts/*.sh | sort -u`
      
    * Optional - adjust batch parameters in `run.config`
-  
     ```
     /labs/Hird/usr/EAGER_sequences/
     |-- samples.csv
@@ -34,7 +33,6 @@ The purpose for this pipeline is to identify amr, virulence, stress, mobilizable
         |-- install_env_logs/
         |-- logs/
     ```
-    
 3. Download environment .yml files into /envs
 4. Build environments using `sbatch` `env_install.sh` `name_env`
 5. Download environment databases and singularity containers when necessary, see `databases.md` for full information
