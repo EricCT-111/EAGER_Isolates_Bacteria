@@ -8,6 +8,8 @@ The purpose for this pipeline is to identify amr, virulence, stress, mobilizable
    * Update `env_install.sh` and `paths.config` to match your paths
      * Each `script.sh` defaults PIPELINE_DIR to the path inside it
      * Instead of editing each script run `echo 'export PIPELINE_DIR=/your/path/scripts' >> ~/.bashrc`
+     * Then exit and log back in, or source it in your current active run `source ~/.bashrc`
+     * Test to confirm it worked with `echo "PIPELINE_DIR"`
      
    * Optional - adjust batch parameters in `run.config`
   
