@@ -7,7 +7,7 @@ The purpose for this pipeline is to identify amr, virulence, stress, mobilizable
 
   * Update `env_install.sh` and `paths.config` to match your paths
     * Each `script.sh` defaults PIPELINE_DIR to the path inside it
-  * Edit all `script.sh` PIPELINE_DIR paths with your using
+  * Change all `script.sh` PIPELINE_DIR paths to yours, by running:
     * `sed -i 's|/labs/Hird/usr/EAGER_sequences/scripts|/your/path/scripts|'` `/your/path/scripts/*.sh`
     * Confirm it worked with `grep -h 'PIPELINE_DIR=' /your/path/scripts/*.sh | sort -u`
      
