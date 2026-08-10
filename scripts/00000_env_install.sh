@@ -27,7 +27,7 @@ set -eo pipefail
 # =============================================================================
 # Configuration -- edit paths for new project
 # =============================================================================
-CONDA_BASE="/labs/Hird/usr/miniforge3" # conda install root
+CONDA_BASE="/labs/Hird/usr/miniforge3" # conda root from conda_setup.sh
 ENV_YAML_DIR="/labs/Hird/usr/EAGER_sequences/scripts/envs" # holds <env_name>.yml
 ENV_INSTALL_ROOT="/labs/Hird/usr/EAGER_sequences/project_tools" # envs created here
 LOG_DIR="/labs/Hird/usr/EAGER_sequences/scripts/install_env_logs" # per-env install logs
