@@ -1,5 +1,6 @@
 # EAGER_Isolates
-The purpose for this pipeline is to identify amr, virulence, stress, mobilizable genes, and bacteriophages of bacterial isolates cultured from wild Neotropical bird intestinal mucosa and lumenal contents using sample data containing raw demultiplexed Illumina only reads and hybrid Nanopore/Illumina reads.
+This pipeline assembles and characterizes bacterial isolate genomes from Illumina, Nanopore, or Nanopore/Illumina hybrid reads. It covers de-novo assembly, contamination screening, taxonomy assignment, annotation, and the identification of phage, AMR, virulence, and stress genes, including whether those genes sit on mobilizable elements such as plasmids and insertion sequences.
+It was developed at the Hird Lab to document the analyses performed on a set of cultured wild Neotropical bird intestinal bacterial isolates, and to be reused on new isolates.
 
 ## Running the Pipeline
 1. Follow `conda_setup.sh` to setup the use newest conda
