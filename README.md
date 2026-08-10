@@ -13,7 +13,7 @@ The purpose for this pipeline is to identify amr, virulence, stress, mobilizable
    * Optional - adjust batch parameters in `run.config`
   
     ```
-    /labs/Hird/Eric/EAGER_sequences/
+    /labs/Hird/usr/EAGER_sequences/
     |-- samples.csv
     |-- containers/
     |-- databases/
