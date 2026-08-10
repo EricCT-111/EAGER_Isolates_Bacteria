@@ -5,7 +5,7 @@ This pipeline assembles and characterizes bacterial isolate genomes from Illumin
 It was developed at the Hird Lab to document the analyses performed on a set of cultured wild Neotropical bird intestinal bacterial isolates, and to be reused on new isolates.
 
 ## Running the Pipeline
-1. Follow `conda_setup.sh` to setup the use newest conda
+1. Follow `conda_setup.sh` to setup the newest conda
 3. Setup project directory structure and import `env_install.sh` (project independent), `lib.sh`, `run.config`, `paths.config`.
 
   * Update paths in `env_install.sh` and `paths.config` to match yours
@@ -63,12 +63,11 @@ It was developed at the Hird Lab to document the analyses performed on a set of 
 | fastp.sh | trimming / filtering Illumina reads | --detect_adapter_for_pe --correction --cut_front --cut_tail --cut_window_size 4 --cut_mean_quality 20 --qualified_quality_phred 20 --length_required 15 |
 | unicycler.sh | de-novo Illumina assembler | default parameters |
 | polish.sh | Illumina Polypolish and Pypolca | default parameters | 
-| hybracter.sh | Nanopore / Hybrid qc, de-novo assembly, polishing | nano-hq --auto hybrid-single or long-single (nanopore only) |
+| hybracter.sh | Nanopore / Hybrid qc, de-novo assembly, polishing | nano-hq --auto hybrid-single or long-single (nanopore only), polypolish/pypolca --careful |
 | nanoq.sh | Nanopore read qc metrics | -f -s -t 5 -vvv |  
 | fcs_adaptor.sh | NCBI adaptor/vector contamination screening | --prok --container-engine singularity | 
 | fcs_gx.sh | NCBI species level contamination screening | default parameters (requires per sample tax id) |
 | fcs_clean.sh | removal of screening findings | default parameters | 
-| filter_contigs.sh | removal of contigs <200 bp using seqkit | seqkit seq -m and fx2tab -nl used |
 | mapping.sh | read mapping to assemblies, producing samtools stats and coverage | default parameters |
 | quast.sh | final assembly correctness metrics | default parameters |
 | checkm2 | machine-learning based completeness and contamination | default parameters |
