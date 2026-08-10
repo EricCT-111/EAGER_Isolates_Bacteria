@@ -1,0 +1,7 @@
+name: phold_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - phold
+# pytorch=*=cuda*
+# pytorch is needed if using NVIDIA GPU for runs

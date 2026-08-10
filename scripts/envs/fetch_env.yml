@@ -1,0 +1,7 @@
+name: fetch_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - entrez-direct # efetch (accessions from genbank)
+  - ncbi-datasets-cli # ncbi genome accessions (nucleotide, protein, gff)
+  - sra-tools # fastq files
+  - seqkit

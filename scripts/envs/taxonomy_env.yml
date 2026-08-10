@@ -1,0 +1,6 @@
+name: taxonomy_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - gtdbtk>=2.6.1,<2.7 # pin to match shared db, Skani comes along
+  - seqkit=2.8.2

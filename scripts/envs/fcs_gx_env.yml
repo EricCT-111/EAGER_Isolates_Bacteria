@@ -1,0 +1,5 @@
+name: fcs_gx_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - ncbi-fcs-gx=0.5.5

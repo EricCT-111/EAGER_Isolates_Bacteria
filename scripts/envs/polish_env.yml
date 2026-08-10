@@ -1,0 +1,8 @@
+name: polish_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - polypolish
+  - pypolca
+  - bwa-mem2
+  - samtools

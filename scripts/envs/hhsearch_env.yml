@@ -1,0 +1,15 @@
+name: hhsearch_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.10
+  - mmseqs2
+  - hmmer
+  - mafft # main sequence aligner
+  - famsa # alt aligner
+  - seqkit
+  - pyrodigal-gv # gene calling
+  - biopython
+  - hhsuite
+  - foldseek
+  - diamond
+  - blast

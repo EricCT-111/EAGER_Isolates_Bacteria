@@ -1,0 +1,8 @@
+name: metabolism_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - eggnog-mapper
+  - pip
+  - pip:
+      - kegganog # pip-only; not in conda channels

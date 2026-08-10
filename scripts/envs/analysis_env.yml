@@ -1,0 +1,12 @@
+name: analysis_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - biopython
+  - mmseqs2
+  - hmmer
+  - diamond
+  - blast
+  - mummer4
+  - seqkit
+  - gawk

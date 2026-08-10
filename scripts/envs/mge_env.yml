@@ -1,0 +1,6 @@
+name: mge_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - isescan
+  - integron_finder

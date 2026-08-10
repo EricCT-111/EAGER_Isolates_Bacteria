@@ -1,0 +1,5 @@
+name: checkm2_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.12
+  - checkm2=1.1.0

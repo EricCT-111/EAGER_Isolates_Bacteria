@@ -1,0 +1,4 @@
+name: orthofinder_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - orthofinder

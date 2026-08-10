@@ -1,0 +1,14 @@
+name: qc_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - fastp
+  - fastqc
+  - nanoq # ONT read stats, similar to nanoplot, written in Rust (no conflicts)
+  - chopper # ONT filtering
+  - filtlong # optional ONT length/quality subsetting
+  - porechop_abi # ONT adaptor detection
+  - minimap2
+  - bwa-mem2
+  - samtools
+  - seqkit

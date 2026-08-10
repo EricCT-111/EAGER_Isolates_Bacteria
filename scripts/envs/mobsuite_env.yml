@@ -1,0 +1,5 @@
+name: mobsuite_env
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - mob_suite
