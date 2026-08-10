@@ -78,7 +78,7 @@ It was developed at the Hird Lab to document the analyses performed on a set of 
 | taxmyphage.sh | taxonomy assignment of phages | default parameters |
 | bakta.sh | annotation | --compliant |
 | amrfinder.sh | amr, virulence, and stress identification using the DNA, prot, and gff of bakta | --plus --organism (where applicable) |
-| eggnog.sh | functional annotation of bakta protein file and decorate gff | --itype proteins -m diamond --sensmode very-sensitive --decorate_gff --decorate_gff_ID_field locus_tag |
+| eggnog.sh | functional annotation of bakta protein file and decorate gff | --itype proteins -m diamond --sensmode sensitive --decorate_gff --decorate_gff_ID_field locus_tag |
 | mob_recon.sh | plasmid reconstruction and typing of fragmented assemblies (Illumina reads in this project) | -g (gives mobile genetic element assessment on plasmids) |
 | mob_typer | plasmid typing on assemblies with full plasmid replicons (Nanopore in this project) | --multi --biomarker_report -g |
 | mge.sh | integron_finder and isescan to identify IS's, integrons to assess mobilizable genes | default parameters |
