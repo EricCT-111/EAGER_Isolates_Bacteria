@@ -17,7 +17,7 @@ This document describes where each shared database is located and how local data
 | fetch_env | entrez-direct, ncbi-datasets-cli, sra-tools, seqkit, pigz | None | NA |
 | final_qc_env | quast, busco | busco_odb12 | there is a shared db but the naming structure breaks, `busco --download_path /path` |
 | genomad_env | genomad | genomad marker database | `genomad download-database /path` |
-| hhsearch_env | hhsuite, mmseq2, hmmer, mafft, famsa | Used in this project (NCBI_CD_v3.19 PfamA_v38_2, phrogs_v4, uniprot_sprot_vir70,) | `wget` <[link](http://ftp.tuebingen.mpg.de/pub/ebio/protevo/toolkit/databases/hhsuite_dbs/)>, see https://github.com/soedinglab/hh-suite for more database info, post download processing discussed in /other_analyses/build_hhsearch_db.sh |
+| hhsearch_env | hhsuite, mmseq2, hmmer, mafft, famsa | Used in this project (NCBI_CD_v3.19 PfamA_v38_2, phrogs_v4, uniprot_sprot_vir70,) | `wget` <[link](http://ftp.tuebingen.mpg.de/pub/ebio/protevo/toolkit/databases/hhsuite_dbs/)>, see https://github.com/soedinglab/hh-suite for more database info, post download processing discussed in /other_analyses/hhsearch/build_hhsearch_db.sh |
 | hybracter_env | hybracter | plassembler | `hybracter install -d /path` |
 | metabolism_env | eggnog-mapper, kegganog | eggnog_db | `/isg/shared/databases/eggnog/v5.0.2/` |
 | mge_env | integron_finder, isescan | None | NA | 
