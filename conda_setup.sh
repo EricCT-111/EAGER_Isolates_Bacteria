@@ -5,6 +5,7 @@
 #  The shared module (miniconda/311_23.11.0-2) is conda 23.11.0 (out of date)
 #    - Can cause issues for environment downloads
 #    - Doesnt have integrated libmamba
+#    - Do not module load miniconda alongside the new download
 # ---------------------------------------------------------------------------
 
 # 1. Install Miniforge (current conda + the libmamba solver)
