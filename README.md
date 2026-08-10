@@ -4,9 +4,10 @@ The purpose for this pipeline is to identify amr, virulence, stress, mobilizable
 ## Running the Pipeline
 1. Follow `conda_setup.sh` to setup the use newest conda
 2. Setup project directory structure and import `env_install.sh` (project independent), `lib.sh`, `run.config`, `paths.config`.
-   * Update `env_install.sh` and `paths.config` to match your structure
+   * Update `env_install.sh` and `paths.config` to match your paths
      * Each `script.sh` defaults PIPELINE_DIR to the path inside it, instead of editing each script run `export PIPELINE_DIR=/your/path/scripts`    
    * Optional - adjust batch parameters in `run.config`
+  
     ```
     /labs/Hird/Eric/EAGER_sequences/
     |-- samples.csv
@@ -29,6 +30,7 @@ The purpose for this pipeline is to identify amr, virulence, stress, mobilizable
         |-- install_env_logs/
         |-- logs/
     ```
+    
 3. Download environment .yml files into /envs
 4. Build environments using `sbatch` `env_install.sh` `name_env`
 5. Download environment databases and singularity containers when necessary, see `databases.md` for full information
