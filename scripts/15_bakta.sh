@@ -16,10 +16,10 @@
 #       strain - name required in samples.csv
 # Can build in logic for adding locus_tags, none in here right now
 #
-# Run one sample: sbatch bakta.sh <sample_id>
+# Run one sample: sbatch bakta.sh <sample_id> # optional <replicons.csv>
 # Run whole batch: sbatch --array=1-15 bakta.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 require_assembly
