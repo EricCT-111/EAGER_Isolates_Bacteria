@@ -18,7 +18,7 @@
 # Run one sample: sbatch unicycler.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 unicycler.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 
@@ -54,8 +54,7 @@ ASM="${UNI_OUT}/assembly.fasta"
 # pull .gfa graph for use in bandage
 if [[ -s "${UNI_OUT}/assembly.gfa" ]]; then
     cp "${UNI_OUT}/assembly.gfa" "${WORKDIR}/${SAMPLE_ID}_assembly.gfa"
-    echo "graph at ${WORKDIR}/${SAMPLE_ID}_assembly.gfa"
 fi
 # unpolished assembly kept separate, post polishing makes it final_assembly.fna
 run_info unicycler
-echo "done ${SAMPLE_ID} unpolished assembly at ${ASM}"
+echo "done ${SAMPLE_ID} unpolished assembly at ${ASM}, graph at ${WORKDIR}/${SAMPLE_ID}_assembly.gfa"
