@@ -17,7 +17,7 @@
 # Run one sample: sbatch fcs_clean.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 fcs_clean.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 require_assembly
@@ -49,7 +49,7 @@ fi
 # assembly backup
 PREFCS="${WORKDIR}/final_assembly.prefcs.fna"
 if [[ -f "$PREFCS" ]]; then
-    echo "pre-clean assembly found, re-cleaning it"
+    echo "pre-clean assembly found, re-cleaning"
 else
     cp "$ASSEMBLY" "$PREFCS"
     echo "pre-clean assembly saved $(basename "$PREFCS")"
@@ -61,15 +61,13 @@ trap 'rm -f "$WORK"' EXIT
 
 _apply() {
     local label="$1" report="$2" outdir="$3"
-    echo ""
-    echo "applying ${label} report"
     cat "$report"
     local cleaned="${outdir}/clean.fasta"
     cat "$WORK" | python3 "$FCS_PY" clean genome \
         --action-report "$report" \
         --output "$cleaned" \
         --contam-fasta-out "${outdir}/contam.fasta"
-    [[ -s "$cleaned" ]] || { echo "${label} no output made" >&2; exit 1; }
+    [[ -s "$cleaned" ]] || { echo "${label} - missing or empty output" >&2; exit 1; }
     cp "$cleaned" "$WORK"
 }
 
