@@ -10,13 +10,13 @@ It was developed at the Hird Lab to document the analyses performed on a set of 
 
   * Update paths in `env_install.sh` and `paths.config` to match yours
   * Each `script.sh` defaults PIPELINE_DIR to the path inside it, change all `script.sh` PIPELINE_DIR paths to yours with:
-    * `sed -i 's|/labs/Hird/usr/EAGER_sequences/scripts|/your/path/scripts|' /your/path/scripts/*.sh`
+    * `sed -i 's|/path/EAGER_sequences/scripts|/your/path/scripts|' /your/path/scripts/*.sh`
     * Confirm it worked with `grep -h 'PIPELINE_DIR=' /your/path/scripts/*.sh | sort -u`
      
    * Optional - adjust batch parameters in `run.config`
  
  ```
-/labs/Hird/usr/EAGER_sequences/
+/path/EAGER_sequences/
     |-- samples.csv
     |-- containers/
     |-- databases/
@@ -40,7 +40,7 @@ It was developed at the Hird Lab to document the analyses performed on a set of 
     
 3. Download environment .yml files into /envs
 4. Build environments using `sbatch` `env_install.sh` `name_env`
-5. Download environment databases and singularity containers when necessary, see `databases.md` for full information
+5. Download environment databases and singularity containers, when necessary, see `databases.md` for full information
 6. Run scripts, `sbatch script.sh <sample_id>` (sample id found in column 1 of samples.csv), or `sbatch --array=1-<N> script.sh`
    
    Suggested order for scripts:
@@ -93,8 +93,6 @@ It was developed at the Hird Lab to document the analyses performed on a set of 
 | phage_comparison.sh | collection of tools / code used for comparing bacillus phage with b83 and bmbtp14 (edirect, mummer, blastp, phmmer, orthofinder) |
 | phold.sh | structure/fold based further annotation of phage genomes |
 | vcontact.sh | proteomic clustering of phage genomes based on viral refseq 230 database | 
-
-
 
 
 
