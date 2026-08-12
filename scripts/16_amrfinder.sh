@@ -16,10 +16,10 @@
 #   ${WORKDIR}/bakta/${SAMPLE_ID}.faa
 #   ${WORKDIR}/bakta/${SAMPLE_ID}.gff3
 #
-# Run one sample: sbatch amrfinder.sh <sample_id> <organism> (optional)
+# Run one sample: sbatch amrfinder.sh <sample_id> # optional <organism>
 # Run whole batch: sbatch --array=1-15 amrfinder.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 ORGANISM="${2:-}"
 pipeline_init "${1:-}"
