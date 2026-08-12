@@ -65,11 +65,11 @@ map_ilm() {
 # platform branching
 case "$PLATFORM" in
     ont)
-        _need "$ONT_FILT"; map_ont ;;
+        "$ONT_FILT"; map_ont ;;
     ilm)
-        _need "$R1_FILT"; _need "$R2_FILT"; map_ilm ;;
+        "$R1_FILT"; _need "$R2_FILT"; map_ilm ;;
     hybrid)
-        _need "$ONT_FILT"; _need "$R1_FILT"; _need "$R2_FILT"
+        "$ONT_FILT"; _need "$R1_FILT"; _need "$R2_FILT"
         map_ont
         map_ilm ;;
 esac
