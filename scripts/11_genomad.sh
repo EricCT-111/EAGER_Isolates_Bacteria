@@ -17,7 +17,7 @@
 # Run one sample: sbatch genomad.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 genomad.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 require_assembly
@@ -40,10 +40,8 @@ genomad end-to-end \
 VIRUS_SRC=$(find "$GMDIR" -name '*_virus.fna' | head -1)
 VIRUS_OUT="${WORKDIR}/${SAMPLE_ID}_virus.fna"
 
-if [[ -z "$VIRUS_SRC" ]]; then
-    echo "${SAMPLE_ID} - no virus.fna produced" >&2
-elif [[ ! -s "$VIRUS_SRC" ]]; then
-    echo "${SAMPLE_ID} - virus fasta is empty" >&2
+if [[ ! -s "$VIRUS_SRC" ]]; then
+    echo "${SAMPLE_ID} - virus fasta is empty or missing" >&2
 else
     cp "$VIRUS_SRC" "$VIRUS_OUT"
     echo "virus - $(basename "$VIRUS_OUT")"
