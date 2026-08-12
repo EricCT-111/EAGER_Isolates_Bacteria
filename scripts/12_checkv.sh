@@ -17,7 +17,7 @@
 # Run one sample: sbatch checkv.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 checkv.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 activate_env "$PHAGE_ENV"
