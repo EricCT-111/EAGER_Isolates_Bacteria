@@ -37,8 +37,7 @@ for _cfg in paths.config run.config; do
     source "${_LIB_DIR}/${_cfg}"
 done
 
-# file must exist and be non-empty; returns 1 rather than exiting so callers
-# can collect several failures before bailing
+# file must exist and be non-empty
 _require_file() {
     [[ -s "$1" ]] || { echo "${SAMPLE_ID:-?} - missing or empty: $1" >&2; return 1; }
 }
