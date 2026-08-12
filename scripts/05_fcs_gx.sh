@@ -16,7 +16,7 @@
 # Run one sample: sbatch fcs_gx.sh <sample_id> <tax_id>
 # No array option - individual taxid needed
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 TAXID="${2:-}"
 pipeline_init "${1:-}"
