@@ -11,12 +11,12 @@
 # -----------------------------------------------------------------------------
 # Pharokka: viral annotation
 #
-# Takes the $WORKDIR/viruses_clean.fna and proviruses_clean from checkv
+# Concatenates CheckV $WORKDIR/viruses_clean.fna and proviruses_clean
 #
 # Run one sample: sbatch pharokka.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 pharokka.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 activate_env "$PHAGE_ENV"
@@ -31,7 +31,7 @@ vtypes=()
 [[ -s "$PROVIRUS" ]] && vtypes+=("$PROVIRUS")
 
 if [[ ${#vtypes[@]} -eq 0 ]]; then
-    echo "both files empty or missing - exiting" >&2
+    echo "both files empty or missing" >&2
     exit 1
 fi
 cat "${vtypes[@]}" > "$ALL_VIRUSES"
