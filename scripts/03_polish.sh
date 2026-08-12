@@ -16,7 +16,7 @@
 # Run one sample: sbatch polish.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 run_polish.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 
@@ -57,7 +57,7 @@ POLYPOLISH_OUT="${POLDIR}/${SAMPLE_ID}_polypolish.fasta"
 polypolish polish "$DRAFT" "${POLDIR}/filt_1.sam" "${POLDIR}/filt_2.sam" \
     > "$POLYPOLISH_OUT" 2> "${POLDIR}/polypolish.log"
 
-[[ -s "$POLYPOLISH_OUT" ]] || { echo "${SAMPLE_ID} polypolish output missing" >&2; exit 1; }
+[[ -s "$POLYPOLISH_OUT" ]] || { echo "${SAMPLE_ID} polypolish output missing/empty" >&2; exit 1; }
 
 # remove intermediate SAM files
 rm -f "${POLDIR}"/aln_*.sam "${POLDIR}"/filt_*.sam "${IDX}"*
