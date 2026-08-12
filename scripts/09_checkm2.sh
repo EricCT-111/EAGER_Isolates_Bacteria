@@ -14,7 +14,7 @@
 # Run one sample: sbatch checkm2.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 checkm2.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 
