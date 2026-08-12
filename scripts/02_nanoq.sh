@@ -12,7 +12,6 @@
 # Nanoq ONT Read Metrics Reporting
 #
 # Run before and/or after hybracter
-#
 # Inputs:
 #   raw : ont_reads path from samples.csv
 #   filtered : ${WORKDIR}/${SAMPLE_ID}_filt_trim.fastq.gz
@@ -20,7 +19,7 @@
 # Run one sample: sbatch nanoq.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 nanoq.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 
@@ -34,7 +33,6 @@ activate_env "$QC_ENV"
 
 REPORTDIR="${WORKDIR}/qc_reports"
 mkdir -p "$REPORTDIR"
-
 FILTERED="${WORKDIR}/${SAMPLE_ID}_filt_trim.fastq.gz"
 
 # for nanoplot like results
@@ -46,7 +44,6 @@ run_nanoq() {
     [[ -s "$out" ]] || { echo "nanoq output missing for ${label}" >&2; exit 1; }
     echo "${label}"
     cat "$out"
-    echo ""
 }
 
 # $1 raw (string), $2 read path, $3 out path
