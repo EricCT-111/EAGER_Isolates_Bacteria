@@ -16,7 +16,7 @@
 # Run one sample: sbatch vcontact.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 taxmyphage.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 activate_env "$TAXMYPHAGE_ENV"
