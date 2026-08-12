@@ -20,7 +20,7 @@
 #
 # **The filtered ont and illumina reads are not copied to WORKDIR, do this manually**
 # -------------------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 
@@ -33,7 +33,7 @@ fi
 resolve_reads
 activate_env "$HYBRACTER_ENV"
 
-[[ -d "$HYBRACTER_DB" ]] || { echo "midding db" >&2; exit 1; }
+[[ -d "$HYBRACTER_DB" ]] || { echo "missing db" >&2; exit 1; }
 
 # conda >=24.7.1 is required
 HYBRACTER_OUT="${WORKDIR}/hybracter"
