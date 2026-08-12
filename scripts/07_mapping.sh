@@ -13,15 +13,14 @@
 #
 # Hybrid samples produce results from each platform (ilm/ont)
 #
-# Uses the filtered reads copied from hybracter into the sample dir (WORKDIR)
-# Name with hybracter's convention:
+# Uses the filtered reads from hybracter:
 #   ONT: ${SAMPLE_ID}_filt_trim.fastq.gz
 #   Illumina: ${SAMPLE_ID}_1.fastq.gz ${SAMPLE_ID}_2.fastq.gz
 #
 # Run one sample: sbatch mapping.sh <sample_id>
 # Run whole batch: sbatch --array=1-15 mapping.sh
 # -----------------------------------------------------------------------------
-PIPELINE_DIR="${PIPELINE_DIR:-/labs/Hird/usr/EAGER_sequences/scripts}"
+PIPELINE_DIR="${PIPELINE_DIR:-/path/EAGER_sequences/scripts}"
 source "${PIPELINE_DIR}/lib.sh"
 pipeline_init "$@"
 require_assembly
