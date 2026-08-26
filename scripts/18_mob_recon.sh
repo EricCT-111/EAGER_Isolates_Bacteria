@@ -27,15 +27,13 @@ fi
 
 activate_env "$MOBSUITE_ENV"
 
-NUC="${WORKDIR}/bakta/${SAMPLE_ID}.fna"
-[[ -s "$NUC" ]] || { echo "${SAMPLE_ID} bakta fna missing" >&2; exit 1; }
-
+# Bakta .fna causes mob_recon to stop at __tmp files, might be header issues with [strain=...]
+NUC="${WORKDIR}/final_assembly.fna"
 MOBDIR="${WORKDIR}/mobsuite"
 
 mob_recon \
     --infile "$NUC" \
     --outdir "${MOBDIR}/recon" \
-    -g "${MOBDIR}/${SAMPLE_ID}_mge.txt" \
     -d "$MOBSUITE_DB" \
     --num_threads "$THREADS" \
     --force
